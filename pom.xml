@@ -26,5 +26,12 @@
       <artifactId>tess4j</artifactId>
       <version>4.5.4</version>
     </dependency>
+    <dependency>
+      <groupId>net.sourceforge.tess4j</groupId>
+      <artifactId>tesseract</artifactId>
+      <version>4.0.0</version>
+      <classifier>win32-x86</classifier> <!-- or win32-x86-64 -->
+    </dependency>
+
   </dependencies>
 </project>
