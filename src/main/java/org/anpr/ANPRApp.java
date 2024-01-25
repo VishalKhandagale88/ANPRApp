@@ -24,7 +24,7 @@ public class ANPRApp extends JFrame {
         setLayout(new BorderLayout());
 
         // Set background color
-        getContentPane().setBackground(new Color(255, 223, 186)); // Replace with your preferred RGB color
+        getContentPane().setBackground(new Color(255, 223, 186));
 
         imageLabel = new JLabel();
         add(imageLabel, BorderLayout.CENTER);
@@ -42,11 +42,11 @@ public class ANPRApp extends JFrame {
         });
 
         // Style the button
-        openButton.setBackground(new Color(46, 139, 87)); // Background color
+        openButton.setBackground(new Color(46, 139, 87));
         openButton.setForeground(Color.WHITE); // Text color
-        openButton.setFont(new Font("Arial", Font.BOLD, 14)); // Font
+        openButton.setFont(new Font("Arial", Font.BOLD, 14));
 
-        add(openButton, BorderLayout.NORTH); // North represents "Top of the frame"
+        add(openButton, BorderLayout.NORTH);
     }
 
     private BufferedImage processImage(File fileImage) {
