@@ -1,9 +1,12 @@
 package org.anpr;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class ANPRApp extends JFrame {
     private final JLabel imageLabel;
@@ -38,4 +41,22 @@ public class ANPRApp extends JFrame {
         add(openButton, BorderLayout.NORTH); // North represents "Top of the frame"
     }
 
+    private BufferedImage processImage(File fileImage) {
+        try {
+            BufferedImage originalImage = ImageIO.read(fileImage);
+            int targetWidth = 600;
+            int targetHeight = 400;
+
+            BufferedImage resizeImg = new BufferedImage(targetWidth, targetHeight, originalImage.getType());
+            Graphics2D graphics = resizeImg.createGraphics();
+            graphics.drawImage(originalImage, 0, 0, targetWidth, targetHeight, null);
+            graphics.dispose();
+
+            return resizeImg;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
